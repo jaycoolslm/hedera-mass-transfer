@@ -1,0 +1,25 @@
+{
+  "name": "bulksend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc && copyfiles -u 1 \"./src/**/*.json\" \"./build\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@hashgraph/sdk": "^2.20.0",
+    "@types/fs-extra": "^11.0.1",
+    "@types/node": "^18.14.0",
+    "dotenv": "^16.0.3",
+    "fs-extra": "^11.1.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.4.0",
+    "copyfiles": "^2.4.1",
+    "ts-jest": "^29.0.5"
+  }
+}
