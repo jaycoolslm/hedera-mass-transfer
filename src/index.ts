@@ -1,8 +1,10 @@
 import fs from "fs-extra";
+import path from "path";
 import transferNft from "./lib/transferNft";
-const imminentDir = "src/json/a";
-const pendingDir = "src/json/b";
-const completedDir = "src/json/c";
+const imminentDir = path.join(__dirname, "/json/a");
+const pendingDir = path.join(__dirname, "/json/b");
+const completedDir = path.join(__dirname, "/json/c");
+const failedDir = path.join(__dirname, "/json/d");
 
 // Pending transactions
 let pendingTx: Promise<{ status: number; file: string }>[] = [];
@@ -46,12 +48,18 @@ export async function moveFilesToCompletedDir() {
         const successfulPath = `${pendingDir}/${tx.file}`;
         const completedFilePath = `${completedDir}/${tx.file}`;
         await fs.move(successfulPath, completedFilePath);
+      } else {
+        const failedPath = `${pendingDir}/${tx.file}`;
+        const failedFilePath = `${failedDir}/${tx.file}`;
+        await fs.move(failedPath, failedFilePath);
       }
     }
 
     console.log("Files moved to completed directory.");
   } catch (err) {
     console.error("Error moving files to completed directory:", err);
+  } finally {
+    pendingTx = [];
   }
 }
 

@@ -28,11 +28,11 @@ describe("File movement", () => {
     const subset = isSubset(pendingBefore, completedAfter);
   });
 
-  //   test("files should return to imminent", async () => {
-  //     await returnFilesToImminentDir();
-  //     const completedAfter = await fs.readdir("src/json/completed");
-  //     expect(completedAfter.length).toBe(0);
-  //   });
+  test("files should return to imminent", async () => {
+    await returnFilesToImminentDir();
+    const completedAfter = await fs.readdir("src/json/a");
+    expect(completedAfter.length).toBe(0);
+  });
 });
 
 function isSubset(arr1: string[], arr2: string[]) {
