@@ -11,10 +11,10 @@ dotenv.config();
 
 const accountId = AccountId.fromString(process.env.ACCOUNT_ID!);
 const privateKey = PrivateKey.fromString(process.env.PRIVATE_KEY!);
-const tokenId = "0.0.3510918";
+const tokenId = "0.0.3105713";
 
 export default async (receiver: string, serial: number, file: string) => {
-  const client = Client.forTestnet().setOperator(accountId, privateKey);
+  const client = Client.forMainnet().setOperator(accountId, privateKey);
 
   const tx = new TransferTransaction().addNftTransfer(
     tokenId,
