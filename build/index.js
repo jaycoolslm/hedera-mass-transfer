@@ -52,7 +52,7 @@ function moveFilesToCompletedDir() {
                 console.log("One or more async functions rejected!");
                 console.error("Error:", error);
             });
-            console.log("All async functions completed successfully!");
+            console.log("All async functions completed executed");
             console.log("Results:", txArr); // [result1, result2, result3]
             for (let tx of txArr) {
                 if (tx.status === 22) {

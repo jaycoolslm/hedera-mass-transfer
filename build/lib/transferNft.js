@@ -37,7 +37,7 @@ const dotenv = __importStar(require("dotenv"));
 dotenv.config();
 const accountId = sdk_1.AccountId.fromString(process.env.ACCOUNT_ID);
 const privateKey = sdk_1.PrivateKey.fromString(process.env.PRIVATE_KEY);
-const tokenId = "0.0.3105713";
+const tokenId = "0.0.3134550";
 exports.default = (receiver, serial, file) => __awaiter(void 0, void 0, void 0, function* () {
     const client = sdk_1.Client.forMainnet().setOperator(accountId, privateKey);
     const tx = new sdk_1.TransferTransaction().addNftTransfer(tokenId, serial, accountId, receiver);

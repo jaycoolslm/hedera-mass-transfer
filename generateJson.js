@@ -7,7 +7,7 @@ function generateJson(serial) {
   };
 
   fs.writeFile(
-    `json/file_${serial}.json`,
+    `json/a/file_${serial}.json`,
     JSON.stringify(jsonObject, null, 2),
     (err) => {
       if (err) throw err;

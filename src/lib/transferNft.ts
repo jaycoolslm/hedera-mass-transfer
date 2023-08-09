@@ -11,7 +11,7 @@ dotenv.config();
 
 const accountId = AccountId.fromString(process.env.ACCOUNT_ID!);
 const privateKey = PrivateKey.fromString(process.env.PRIVATE_KEY!);
-const tokenId = "0.0.3105713";
+const tokenId = "0.0.3134550";
 
 export default async (receiver: string, serial: number, file: string) => {
   const client = Client.forMainnet().setOperator(accountId, privateKey);
